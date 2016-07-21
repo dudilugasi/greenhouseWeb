@@ -1,0 +1,98 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">{{greenhouse.name}} Statistics</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="wi wi-humidity"></i> Air Humidity
+            </div>
+            <div class="panel-body">
+                <form role="form">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                        <input type="date" class="form-control" ng-model="dates.airHumidity" ng-change="dateChanged('airHumidity')">
+                    </div>
+                </form>
+                <div id="airHumidity-chart" class="morris-chart"></div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="wi wi-humidity"></i> Soil Humidity
+            </div>
+            <div class="panel-body">
+                <form role="form">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                        <input type="date" class="form-control" ng-model="dates.soilHumidity" ng-change="dateChanged('soilHumidity')">
+                    </div>
+                </form>
+                <div id="soilHumidity-chart" class="morris-chart"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="wi wi-thermometer"></i> Temperature
+            </div>
+            <div class="panel-body">
+                <form role="form">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                        <input type="date" class="form-control" ng-model="dates.temperature" ng-change="dateChanged('temperature')">
+                    </div>
+                </form>
+                <div id="temperature-chart" class="morris-chart"></div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="wi wi-day-sunny"></i> Luminance
+            </div>
+            <div class="panel-body">
+                <form role="form">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                        <input type="date" class="form-control" ng-model="dates.luminance" ng-change="dateChanged('luminance')">
+                    </div>
+                </form>
+                <div id="luminance-chart" class="morris-chart"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bolt"></i> Monthly Electricity Consumption
+            </div>
+            <div class="panel-body">
+                <form role="form">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                        <input type="month" class="form-control" ng-model="months.electricity" ng-change="monthChanged('electricity')">
+                    </div>
+                </form>
+                <div id="electricity-chart"></div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-tint"></i> Monthly Water Consumption
+            </div>
+            <div class="panel-body">
+                <form role="form">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                        <input type="month" class="form-control" ng-model="months.water" ng-change="monthChanged('water')">
+                    </div>
+                </form>
+                <div id="water-chart"></div>
+            </div>
+        </div>
+    </div>
+</div>

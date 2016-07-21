@@ -1,0 +1,75 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Add Preset</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<div class="row">
+    <div class="col-lg-8">
+
+        <div class="panel panel-default thresholds-panel">
+            <div class="panel-heading">
+                Insert Options
+            </div>
+            <div class="panel-body">
+                <form class='form-inline' name="form">
+                    <div class="form-group">
+                        <label class="control-label">Name</label>
+                        <input type="text" ng-model="name" class="form-control">
+                    </div>
+                    <h3>thresholds</h3>
+                    <div class='thresholds-group'>
+                        <h3><i class="wi wi-thermometer"></i> Temperature:</h3>
+                        <div class="form-group" data-show-errors>
+                            <label class='control-label'>min: </label>
+                            <input type="number" name="tempMin" class='form-control' ng-model="thresholds['temperature']['minValue']" lower-than="{{thresholds['temperature']['maxValue']}}">
+                            <label class='control-label'>max: </label>
+                            <input type="number" name="tempMax" class='form-control' ng-model="thresholds['temperature']['maxValue']"> <i class="wi wi-celsius" ></i>
+                            <p class="help-block" ng-if="form.tempMin.$error.lowerThan">Minimum value cannot surpass the maximum value </p>
+                        </div>
+                    </div>
+
+                    <div class='thresholds-group'>
+                        <h3><i class="wi wi-humidity"></i> Humidity</h3>
+                        <div class="form-group" data-show-errors>
+                            <label class='control-label'>min: </label>
+                            <input type="number" class='form-control' name="humMin" ng-model="thresholds['airHumidity']['minValue']" lower-than="{{thresholds['airHumidity']['maxValue']}}">
+                            <label class='control-label'>max: </label>
+                            <input type="number" class='form-control' ng-model="thresholds['airHumidity']['maxValue']"> <i class="fa fa-percent" ></i>
+                            <p class="help-block" ng-if="form.humMin.$error.lowerThan">Minimum value cannot surpass the maximum value </p>
+
+                        </div>
+                    </div>
+
+                    <div class='thresholds-group'>
+                        <h3><i class="wi wi-day-sunny"></i> Luminance</h3>
+                        <div class="form-group" data-show-errors>
+                            <label class='control-label'>min: </label>
+                            <input type="number" class='form-control' name="lumMin" ng-model="thresholds['luminance']['minValue']" lower-than="{{thresholds['luminance']['maxValue']}}">
+                            <label class='control-label'>max: </label>
+                            <input type="number" class='form-control' ng-model="thresholds['luminance']['maxValue']"> <i class="fa fa-percent" ></i>
+                            <p class="help-block" ng-if="form.lumMin.$error.lowerThan">Minimum value cannot surpass the maximum value </p>
+
+                        </div>
+                    </div>
+
+                    <div class="thresholds-group">
+                        <h3><i class="wi wi-humidity"></i> Soil Humidity</h3>
+                        <div class="form-group" data-show-errors>
+                            <label class='control-label'>min: </label>
+                            <input type="number" class='form-control' name="SoHumMin" ng-model="thresholds['soilHumidity']['minValue']" lower-than="{{thresholds['soilHumidity']['maxValue']}}">
+                            <label class='control-label'>max: </label>
+                            <input type="number" class='form-control' ng-model="thresholds['soilHumidity']['maxValue']"> <i class="fa fa-percent" ></i>
+                            <p class="help-block" ng-if="form.SoHumMin.$error.lowerThan">Minimum value cannot surpass the maximum value </p>
+
+                        </div>
+                    </div>
+                    <div class="form-group form-footer">
+                        <button type='submit' class='btn btn-default' ng-click='submit($event)'>Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

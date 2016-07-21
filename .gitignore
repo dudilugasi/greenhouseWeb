@@ -1,0 +1,7 @@
+/api/vendor
+/api/bootstrap/db.php
+/logs/*
+!/logs/README.md
+/nbproject
+/bower_components
+*.coffee
